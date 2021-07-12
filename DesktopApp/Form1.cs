@@ -16,6 +16,10 @@ namespace DesktopApp
 {
     public partial class Form1 : Form
     {
+        /**/
+        private static string _projectId, _user, _role;
+
+        /**/
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn(
@@ -26,7 +30,7 @@ namespace DesktopApp
             int nWidthEllipse,
             int nHeightEllipse
             );
-        public Form1()
+        public Form1(string projectID, string username, string role)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -34,6 +38,11 @@ namespace DesktopApp
             pnlNav.Top = btnDashboard.Top;
             pnlNav.Left = btnDashboard.Left;
             btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+
+            /**/
+            _projectId = projectID;
+            _user = username;
+            _role = role;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,7 +61,7 @@ namespace DesktopApp
             /* Open Child Form */
             lblTabName.Text = "Dashboard";
             this.pnlFormLoader.Controls.Clear();
-            Dashboard FrmDashboard_Vrb = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Dashboard FrmDashboard_Vrb = new Dashboard(_projectId) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(FrmDashboard_Vrb);
             FrmDashboard_Vrb.Show();

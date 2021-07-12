@@ -16,20 +16,24 @@ namespace DesktopApp.Auth
     {
         private int xCoordinate = 25;
         private int yCoordinate = 130;
-
+        private static string projectID, username, role;
         public ProjectForm(string tokenAuth, JObject resJson)
         {
             InitializeComponent();
             /* convert JToken -> JArray */
             var projIDArr = JArray.FromObject(resJson["devices"]);
+            username = (string)resJson["username"];
+            role = (string)resJson["role"];
             int index = 1;
             foreach (JObject item in projIDArr)
             {
                 createAProItem(index.ToString(), xCoordinate, yCoordinate);
+                index++;
                 xCoordinate += 60;
                 createAProItem(item.GetValue("nameProject").ToString(), xCoordinate, yCoordinate);
                 xCoordinate += 240;
                 createAProItem(item.GetValue("addressProject").ToString(), xCoordinate, yCoordinate);
+                projectID = item.GetValue("addressProject").ToString();
                 xCoordinate += 240;
                 createAProItem(checkState((bool)item.GetValue("activeProject")), xCoordinate, yCoordinate);
                 createABtn((bool)item.GetValue("activeProject"), xCoordinate + 90, yCoordinate - 7);
@@ -66,9 +70,26 @@ namespace DesktopApp.Auth
                 AutoSize = true,
                 Location = new Point(x, y),
                 Text = state ? "Monitoring" : "Back",
-                FlatStyle = FlatStyle.Flat
+                FlatStyle = FlatStyle.Flat,
+                Name = "btnProject1",
+                /* Set this property to check btn in event click */
+                AccessibleName = "btnProject1"
             };
+            btnProject.Click += new EventHandler(btnProject_Click);
             this.Controls.Add(btnProject);
+        }
+        private void btnProject_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string accessNameBtn = btn.AccessibleName;
+            /* code for 1 project - not scale up for many projects */
+            /* Check active or not --- not done */
+            if(accessNameBtn == "btnProject1")
+            {
+                Form1 form1 = new Form1(projectID, username, role);
+                form1.Show();
+                this.Close();
+            }
         }
         private string checkState(bool state)
         {
