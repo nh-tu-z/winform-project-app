@@ -38,15 +38,17 @@ namespace DesktopApp
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblTabName = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
+            this.btnAlarm = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -62,6 +64,8 @@ namespace DesktopApp
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnSetting);
+            this.panel1.Controls.Add(this.btnReport);
+            this.panel1.Controls.Add(this.btnAlarm);
             this.panel1.Controls.Add(this.btnDataTable);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.panel2);
@@ -156,45 +160,45 @@ namespace DesktopApp
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.lblRole);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 116);
+            this.panel5.Location = new System.Drawing.Point(0, 104);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 91);
+            this.panel5.Size = new System.Drawing.Size(190, 103);
             this.panel5.TabIndex = 2;
             // 
-            // label2
+            // lblRole
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.label2.Location = new System.Drawing.Point(30, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Some User Text here";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.lblRole.Location = new System.Drawing.Point(35, 3);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(110, 12);
+            this.lblRole.TabIndex = 2;
+            this.lblRole.Text = "Some User Text here";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblUserName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 84);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(190, 32);
+            this.panel4.Size = new System.Drawing.Size(190, 20);
             this.panel4.TabIndex = 1;
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(43, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.lblUserName.Location = new System.Drawing.Point(43, 2);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(86, 16);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "User Name";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -249,6 +253,44 @@ namespace DesktopApp
             this.pnlFormLoader.Size = new System.Drawing.Size(1010, 650);
             this.pnlFormLoader.TabIndex = 3;
             // 
+            // btnAlarm
+            // 
+            this.btnAlarm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAlarm.FlatAppearance.BorderSize = 0;
+            this.btnAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlarm.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnAlarm.Image = global::DesktopApp.Properties.Resources.cells;
+            this.btnAlarm.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnAlarm.Location = new System.Drawing.Point(0, 291);
+            this.btnAlarm.Name = "btnAlarm";
+            this.btnAlarm.Size = new System.Drawing.Size(190, 42);
+            this.btnAlarm.TabIndex = 1;
+            this.btnAlarm.Text = "Alarms";
+            this.btnAlarm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAlarm.UseVisualStyleBackColor = true;
+            this.btnAlarm.Click += new System.EventHandler(this.btnAlarms_Click);
+            this.btnAlarm.Leave += new System.EventHandler(this.btnAlarms_Leave);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnReport.Image = global::DesktopApp.Properties.Resources.cells;
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnReport.Location = new System.Drawing.Point(0, 333);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(190, 42);
+            this.btnReport.TabIndex = 1;
+            this.btnReport.Text = "Report";
+            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnReport.Leave += new System.EventHandler(this.btnReport_Leave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,9 +324,9 @@ namespace DesktopApp
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
@@ -296,6 +338,8 @@ namespace DesktopApp
         private System.Windows.Forms.Label lblTabName;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnlFormLoader;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnAlarm;
     }
 }
 

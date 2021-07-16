@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 /* Add Auth folder */
 using DesktopApp.Auth;
+/* Add to test child form */
+using DesktopApp.ChildForm;
 namespace DesktopApp
 {
     static class Program
